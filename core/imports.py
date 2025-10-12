@@ -1,10 +1,8 @@
 # core/imports.py
-
 import speech_recognition as sr
 import pyttsx3
 import sys
 import time
-
 engine = pyttsx3.init('sapi5')
 
 # Set voice properties
