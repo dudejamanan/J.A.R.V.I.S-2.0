@@ -6,7 +6,10 @@ import time
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import webbrowser
-
+import os
+import pyautogui
+import pygetwindow as gw
+from time import strftime
 
 engine = pyttsx3.init('sapi5')
 
