@@ -3,6 +3,11 @@ import speech_recognition as sr
 import pyttsx3
 import sys
 import time
+import spotipy
+from spotipy.oauth2 import SpotifyOAuth
+import webbrowser
+
+
 engine = pyttsx3.init('sapi5')
 
 # Set voice properties

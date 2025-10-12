@@ -2,9 +2,8 @@ from core.speaker import speak
 from core.listener import listen
 from modules.greetings import greet,tell_time
 from modules.system_control import sleep
+#from core.imports import spotipy,SpotifyOAuth
 from modules.entertainment import spotify
-import spotipy
-from spotipy.oauth2 import SpotifyOAuth
 
 speak("Jarvis 2.0 initialized.")
 greet() 

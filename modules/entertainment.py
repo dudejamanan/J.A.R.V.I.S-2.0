@@ -1,10 +1,8 @@
-from core.imports import engine
+from core.imports import engine,spotipy,SpotifyOAuth,webbrowser
 from core.speaker import speak
 from core.listener import listen
-import spotipy
-from spotipy.oauth2 import SpotifyOAuth
-import webbrowser
 
+#spotify credentials
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
     client_id="5a6ed23ab2c74616ab303bb02dc608a3",
     client_secret="ac8751843ff542bca0f9e10159d7e882",
@@ -13,7 +11,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
 ))
 
 def spotify(song_name=None):
-    # If no song name is given, ask the user
+    # If no song name is given, ask the user again
     while not song_name or song_name.strip() == "":
         speak("What song would you like to play, sir?")
         song_name = listen()
