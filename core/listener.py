@@ -10,7 +10,7 @@ def listen(timeout=3, phrase_time_limit=5):
         try:
             audio = recognizer.listen(source, timeout=timeout, phrase_time_limit=phrase_time_limit)
         except sr.WaitTimeoutError:
-            speak("I didn't hear anything. Please try again.")
+            #speak("I didn't hear anything. Please try again.")
             return None
 
     try:
@@ -18,7 +18,7 @@ def listen(timeout=3, phrase_time_limit=5):
         query = recognizer.recognize_google(audio, language="en-in")
         return query.lower()
     except sr.UnknownValueError:
-        speak("Sorry, I didn't catch that. Please repeat.")
+        #speak("Sorry, I didn't catch that. Please repeat.")
         return None
     except sr.RequestError:
         speak("Network error. Please check your internet.")
