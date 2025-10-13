@@ -1,11 +1,11 @@
 from core.speaker import speak
 from core.listener import listen
 from modules.greetings import greet,tell_time
-from modules.system_control import sleep,shutdown,restart,switch_window,switch_to_app,screenshot
+from modules.system_control import sleep,shutdown,restart,switch_window,switch_to_app,screenshot,increase_volume,decrease_volume,mute_volume
 from modules.entertainment import spotify
 
 speak("Jarvis 2.0 initialized.")
-#greet() 
+greet() 
 
 while True:
     command = listen()
@@ -29,5 +29,11 @@ while True:
             switch_to_app(app_name)
         elif "screenshot" in command:
             screenshot()
+        elif "increase volume" in command:
+            increase_volume()
+        elif "decrease volume" in command:
+            decrease_volume()
+        elif "mute" in command:
+            mute_volume()
         else:
             speak(f"You said: {command}")

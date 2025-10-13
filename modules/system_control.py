@@ -73,3 +73,19 @@ def screenshot():
     #os.path.join joins my desktop path and file like - C:\Users\Manan\Desktop\Screenshot 2025-10-12 18-05-32.png
     img.save(full_path)
     speak(f"Screenshot saved on Desktop:{full_path}")
+
+def increase_volume():
+        for i in range(15):
+            pyautogui.press("volumeup")
+            time.sleep(0.1)
+
+        speak("volume increased sir")
+def decrease_volume():
+        for i in range(15):
+            pyautogui.press("volumedown")
+            time.sleep(0.2)
+
+        speak("volume decreased sir")
+def mute_volume():
+    pyautogui.press("volumemute")
+    speak("muted volume sir")
