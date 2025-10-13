@@ -1,122 +1,195 @@
-Jarvis 2.0 – Modular AI Voice Assistant
-Jarvis 2.0 is a Python-based modular AI voice assistant that listens, responds, and executes commands. It’s designed for extensibility and provides a real-time letter-by-letter display of spoken text in the terminal.
+# J.A.R.V.I.S 2.0 — Your Personal AI Desktop Assistant
 
-🚀 Features
+J.A.R.V.I.S 2.0 (Just A Rather Very Intelligent System) is a Python-based AI assistant designed to perform a variety of desktop tasks using voice commands.
+From controlling system operations and playing music to sending WhatsApp messages and switching between apps — JARVIS is your own Iron Man-inspired productivity partner ⚙️💬
 
-Voice commands and speech recognition (online and offline ready)
+## 🚀 Features
+1) 🎙️ Voice Interaction
 
-Letter-by-letter terminal display while speaking
+2) Always-on voice assistant powered by speech_recognition and pyttsx3
 
-Greet users and tell the current time
+3) Listens to your commands and responds naturally
 
-Open websites and apps with simple voice commands
+4) Smart error handling — Jarvis politely asks you to repeat if it doesn’t hear clearly
 
-Modular design for easy feature expansion
+## 💻 System Control
 
-Cross-platform support (Windows/Linux/macOS)
+1) Shutdown / Restart / Sleep your PC with a single voice command
 
-📁 Folder Structure
+2) Switch windows or apps (e.g. “Switch to Chrome”)
+
+3) Take screenshots (automatically saved to Desktop)
+
+4) Change volume (increase, decrease, mute, unmute)
+
+### 🧩 Example Commands:
+
+Jarvis, shutdown the system  
+Jarvis, switch to Notepad  
+Jarvis, take a screenshot  
+Jarvis, increase the volume  
+
+## 🎵 Entertainment (Spotify Integration)
+
+1) Search and play any song on Spotify using your voice
+
+2) Uses the official Spotify Web API and opens the song in your browser
+
+### Example:
+
+Jarvis, play Shape of You on Spotify
+## 💬 Messaging (WhatsApp Integration)
+
+1) Send WhatsApp messages using pywhatkit
+
+2) Supports scheduled or instant sending
+
+3) Detects contact names and asks for message content
+
+### Example:
+
+Jarvis, send a message to Ivan  
+Jarvis, message Mom saying I’ll call later
+
+## ⏰ Time & Greetings
+
+1) Greets you according to the time of day
+
+2) Tells the current time
+
+### Example:
+
+Jarvis, what’s the time?  
+Jarvis, good morning
+
+## 🧩 Project Structure
 JARVIS 2.0/
 │
-├─ main.py                # Main program
-├─ core/                  # Core modules
-│   ├─ imports.py         # Shared imports and objects
-│   ├─ speaker.py         # TTS with letter-by-letter display
-│   └─ listener.py        # Speech recognition listener
-└─ modules/               # User-defined features
-    └─ functions.py       # Custom commands (time, greet, open apps)
+├── core/
 
-⚡ Installation
+│   ├── imports.py          # All common imports and initializations
 
-1. Clone the repository:
+│   ├── listener.py         # Handles microphone input and speech recognition
 
-git clone https://github.com/yourusername/Jarvis-2.0.git
+│   └── speaker.py          # Text-to-speech module
+│
+├── modules/
 
-cd Jarvis-2.0
+│   ├── greetings.py        # Greet and tell_time functions
 
-2. Create a virtual environment:
+│   ├── system_control.py   # System actions: shutdown, restart, screenshot, volume
 
-python -m venv venv
+│   ├── entertainment.py    # Spotify song playback
 
-3. Activate the virtual environment:
+│   └── messaging.py        # WhatsApp messaging with pywhatkit
+│
+├── main.py                 # The core brain of Jarvis
 
-Windows:
+└── README.md               # Project documentation
 
-venv\Scripts\activate
+## How It Works
+
+1) Jarvis starts with:
+
+Jarvis 2.0 initialized.
 
 
-Linux/macOS:
+2) It greets based on the current time.
 
-source venv/bin/activate
+3) It listens for your voice command → processes → performs the action.
 
-4. Install dependencies:
+4) After each command, it keeps listening for more until you tell it to sleep.
+
+## ⚙️ Installation
+
+### Clone this repository:
+
+git clone https://github.com/<your-username>/JARVIS-2.0.git
+cd JARVIS-2.0
+
+
+### Install dependencies:
 
 pip install -r requirements.txt
 
-🏃 Usage
 
-Run Jarvis:
+### Or manually:
 
-python main.py
+pip install pyttsx3 speechrecognition spotipy pyautogui pygetwindow pywhatkit pillow
 
-Jarvis will initialize and greet the user.
 
-Listens for commands like:
+### Spotify Setup:
 
-"time" → tells current time
+1) Go to Spotify Developer Dashboard
 
-"youtube" → opens YouTube
+2) Create an app and note down your Client ID and Client Secret
 
-"stop" → exits Jarvis
+3) Set redirect URI: http://127.0.0.1:8888/callback
 
-Spoken text appears letter-by-letter in the terminal simultaneously.
+4) Add them to your entertainment.py config
 
-✨ Adding New Features
+5) Run JARVIS:
 
-1. Open modules/functions.py.
+6) python main.py
 
-2. Add a new function:
+## 🧩 Example Conversation
 
-from core.speaker import speak
+🧠 You: Jarvis, what’s the time?
+💻 JARVIS: It’s 5:42 PM, sir.
 
-def tell_joke():
-    speak("Why did the programmer quit his job? Because he didn't get arrays!")
+🧠 You: Jarvis, play Believer on Spotify.
+💻 JARVIS: Playing Believer on Spotify.
 
-3. Import in main.py and call it based on user commands:
+🧠 You: Jarvis, take a screenshot.
+💻 JARVIS: Screenshot will be taken in next 5 seconds.
 
-from modules.functions import tell_joke
+🧠 You: Jarvis, send a message to Mom.
+💻 JARVIS: What should I say to Mom?
 
-if "joke" in command:
-    tell_joke()
+## 🛠️ Technologies Used
+Feature	Library
+Speech Recognition	speech_recognition
+Text-to-Speech	pyttsx3
+Spotify Playback	spotipy
+GUI Automation	pyautogui
+WhatsApp Messaging	pywhatkit
+Window Management	pygetwindow
+Screenshot Handling	Pillow
+## ⚡ Future Improvements
 
-🛠 Requirements
 
-Python >= 3.12
+🤖 ChatGPT Integration for general Q&A
 
-Libraries:
+🧱 GUI Dashboard for manual control
 
-pyttsx3
+🌐 Browser automation (Google search, YouTube control)
 
-SpeechRecognition
+🏠 Smart home control via IoT
 
-pyaudio (for microphone input)
+👨‍💻 Author
 
-time, sys, webbrowser (built-in)
+## 🤝 Open Source Contributions
 
-💡 Best Practices
+This project is open to pull requests and contributions.
+I’m actively maintaining and expanding J.A.R.V.I.S — and I’d love to see your ideas!
 
-Do not push venv to GitHub (use .gitignore).
+### If you’d like to contribute:
 
-Keep core functionality in core/ and custom commands in modules/.
+1) Fork this repository
 
-Use letter-by-letter speak() for a more interactive experience.
+2) Create a new branch for your feature or fix
 
-👥 Contributors
+3) Submit a pull request — I’ll review it personally!
 
-Manan Dudeja – Project Creator & Developer
+💡 All meaningful and creative contributions are welcome — from code improvements to new features.
 
-Open for contributions! Submit pull requests or report issues.
+# 🧑‍💻 Developer
 
-📄 License
+## 👤 Manan Dudeja
+B.Tech CSE Core @ VIT Chennai
+Building JARVIS 2.0 — a modular AI assistant integrated with Smart Desk automation.
 
-This project is open-source and free to use under the MIT License.
+
+## 🏁 License
+
+This project is open-source under the MIT License.
