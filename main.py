@@ -1,8 +1,9 @@
 from core.speaker import speak
 from core.listener import listen
 from modules.greetings import greet, tell_time
-from modules.system_control import sleep, shutdown, restart, switch_window, switch_to_app, screenshot, increase_volume, decrease_volume, mute_volume
+from modules.system_control import sleep, shutdown, restart, switch_window, switch_to_app, screenshot, increase_volume, decrease_volume, mute_volume,type,open_notepad,close_notepad,save,copy,paste,enter,open_cmd,close_cmd
 from modules.entertainment import spotify
+from modules.web_utilities import monkey_type,whatsapp
 import time
 
 speak("Jarvis 2.0 initialized.")
@@ -63,5 +64,31 @@ while True:
             decrease_volume()
         elif "mute" in command:
             mute_volume()
+        elif "type" in command:
+            type()
+        elif "open notepad" in command:
+            open_notepad()
+        elif "close notepad" in command:
+            close_notepad()
+        elif "open cmd" in command:
+            open_cmd()
+        elif "close cmd" in command:
+            close_cmd()
+        elif "copy" in command:
+            copy()
+        elif "paste" in command:
+            paste()
+        elif "save" in command:
+            save()
+        elif "enter" in command:
+            enter()
+        elif "monkey" in command:
+            monkey_type()
+        elif "whatsapp" in command:
+            whatsapp()
+            enter()
+
+            
         else:
             speak(f"You said: {command}")
+            

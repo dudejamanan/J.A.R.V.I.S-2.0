@@ -89,3 +89,36 @@ def decrease_volume():
 def mute_volume():
     pyautogui.press("volumemute")
     speak("muted volume sir")
+def type():
+     speak("Voice mode activated. Say 'stop typing' to exit.")
+     while True:
+          query=listen(timeout=6,phrase_time_limit=10)
+          if query:
+               if 'stop typing' in query:
+                    speak("Voice mode deactivated.")
+                    break
+               else:
+                    pyautogui.typewrite(query+" ")
+          else :
+               continue #if silent for some time , continue waiting
+def open_notepad():
+     notepad_path = "C:\\Windows\\system32\\notepad.exe"
+     os.startfile(notepad_path)
+def close_notepad():
+     speak("okay sir closing notepad")
+     os.system("taskkill /f /im notepad.exe")
+     #taskkill is a windows command used to terminate tasks
+     #/f flag forces the termination of tasks
+     #/im specifies the image name (in this case notepad.exe)
+def save():
+     pyautogui.hotkey('ctrl','s')
+def copy():
+     pyautogui.hotkey('ctrl','c')
+def paste():
+     pyautogui.hotkey('ctrl','v')
+def enter():
+     pyautogui.press('enter')
+def open_cmd():
+     os.system("start cmd")
+def close_cmd():
+     os.system("taskkill /f /im cmd.exe")

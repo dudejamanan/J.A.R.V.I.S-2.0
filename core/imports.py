@@ -10,6 +10,8 @@ import os
 import pyautogui
 import pygetwindow as gw
 from time import strftime
+import pywhatkit
+import datetime
 
 engine = pyttsx3.init('sapi5')
 
