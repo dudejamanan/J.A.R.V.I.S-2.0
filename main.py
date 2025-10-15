@@ -5,7 +5,7 @@ from modules.system_control import sleep, shutdown, restart, switch_window, swit
 from modules.entertainment import spotify
 from modules.web_utilities import monkey_type,whatsapp
 import time
-
+from modules.pushbullet_actions import lock_phone
 system_start()
 #speak("Jarvis 2.0 initialized.")
 #greet()
@@ -92,6 +92,9 @@ while True:
         elif "whatsapp" in command:
             whatsapp()
             enter()
+        elif "lock my phone" in command:
+            speak("Locking your phone, sir.")
+            lock_phone()
         else:
             speak(f"You said: {command}")
             

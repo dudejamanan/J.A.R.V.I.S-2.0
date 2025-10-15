@@ -12,6 +12,8 @@ import pygetwindow as gw
 from time import strftime
 import pywhatkit
 import datetime
+import requests
+
 
 engine = pyttsx3.init('sapi5')
 

@@ -1,6 +1,7 @@
 from core.speaker import speak
 from core.imports import webbrowser,datetime,pywhatkit
 from core.listener import listen
+import requests
 
 def monkey_type():
     webbrowser.open("www.monkeytype.com")
@@ -31,3 +32,5 @@ def whatsapp():
     except Exception as e:
         speak("Sorry, i coundn't send the message")
         print(e)
+
+
