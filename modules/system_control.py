@@ -97,6 +97,10 @@ def type():
                if 'stop typing' in query:
                     speak("Voice mode deactivated.")
                     break
+               if 'press enter' in query:
+                    pyautogui.press('enter')
+               if 'backspace' in query:
+                    pyautogui.press('backspace')
                else:
                     pyautogui.typewrite(query+" ")
           else :
@@ -118,6 +122,10 @@ def paste():
      pyautogui.hotkey('ctrl','v')
 def enter():
      pyautogui.press('enter')
+def select_all():
+     pyautogui.hotkey('select','a')
+def backspace():
+     pyautogui.press('backspace')
 def open_cmd():
      os.system("start cmd")
 def close_cmd():
