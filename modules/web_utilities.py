@@ -1,5 +1,5 @@
 from core.speaker import speak
-from core.imports import webbrowser,datetime,pywhatkit
+from core.imports import webbrowser,datetime,pywhatkit,genai
 from core.listener import listen
 import requests
 
@@ -33,5 +33,4 @@ def whatsapp():
     except Exception as e:
         speak("Sorry, i coundn't send the message")
         print(e)
-
 

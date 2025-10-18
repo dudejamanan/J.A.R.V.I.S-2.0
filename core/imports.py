@@ -13,6 +13,7 @@ from time import strftime
 import pywhatkit
 import datetime
 import requests
+from google import genai
 
 
 engine = pyttsx3.init('sapi5')

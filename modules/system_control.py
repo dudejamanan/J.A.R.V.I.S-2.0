@@ -130,7 +130,7 @@ def open_cmd():
      os.system("start cmd")
 def close_cmd():     
      os.system("taskkill /f /im cmd.exe")
-def open_anything(query):
+def open_anything(query):     
      item = query.replace("open","").strip()
      pyautogui.press('win')
      time.sleep(0.7)
