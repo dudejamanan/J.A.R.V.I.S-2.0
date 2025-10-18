@@ -1,12 +1,12 @@
 from core.speaker import speak
 from core.listener import listen
 from modules.greetings import greet, tell_time,system_start
-from modules.system_control import sleep, shutdown, restart, switch_window, switch_to_app, screenshot, increase_volume, decrease_volume, mute_volume,type,open_notepad,close_notepad,save,copy,paste,enter,open_cmd,close_cmd,select_all,backspace
+from modules.system_control import sleep, shutdown, restart, switch_window, switch_to_app, screenshot, increase_volume, decrease_volume, mute_volume,type,open_notepad,close_notepad,save,copy,paste,enter,open_cmd,close_cmd,select_all,backspace,open_anything
 from modules.entertainment import spotify
 from modules.web_utilities import monkey_type,whatsapp
 import time
 from modules.pushbullet_actions import lock_phone
-system_start()
+#system_start()
 #speak("Jarvis 2.0 initialized.")
 #greet()
 
@@ -89,12 +89,14 @@ while True:
             backspace()
         elif "monkey" in command:
             monkey_type()
+        elif "open" in command:
+            open_anything(command)
         elif "whatsapp" in command:
             whatsapp()
             enter()
         elif "lock my phone" in command:
             speak("Locking your phone, sir.")
-            lock_phone()
+            lock_phone()    
         else:
             speak(f"You said: {command}")
             

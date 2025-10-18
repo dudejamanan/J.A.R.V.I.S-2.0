@@ -3,7 +3,7 @@ from core.imports import sys,os,time,pyautogui,gw,strftime
 from core.listener import listen
 
 def sleep():
-    speak("Alright baby i am going bye. muahhh")
+    speak("Alright i am going bye.")
     sys.exit()
 
 def shutdown():
@@ -128,5 +128,13 @@ def backspace():
      pyautogui.press('backspace')
 def open_cmd():
      os.system("start cmd")
-def close_cmd():
+def close_cmd():     
      os.system("taskkill /f /im cmd.exe")
+def open_anything(query):
+     item = query.replace("open","").strip()
+     pyautogui.press('win')
+     time.sleep(0.7)
+     pyautogui.write(item)
+     time.sleep(1)
+     pyautogui.press('enter')
+     speak(f'opening {item} sir')

@@ -11,7 +11,8 @@ def whatsapp():
     name = listen()
     contacts = {
         "myself":"+918595115309",
-        "manav":"+919667787672"
+        "manav":"+919667787672",
+        "mamma":"+919211331615"
     }
     if name not in contacts:
         speak(f"I dont have any {name} saved in my memory")
