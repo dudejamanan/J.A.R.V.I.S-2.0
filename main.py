@@ -1,13 +1,13 @@
 from core.speaker import speak
 from core.listener import listen
 from modules.greetings import greet, tell_time,system_start
-from modules.system_control import sleep, shutdown, restart, switch_window, switch_to_app, screenshot, increase_volume, decrease_volume, mute_volume,type,open_notepad,close_notepad,save,copy,paste,enter,open_cmd,close_cmd,select_all,backspace,open_anything
+from modules.system_control import sleep, shutdown, restart, switch_window, switch_to_app, screenshot, increase_volume, decrease_volume, mute_volume,type,open_notepad,close_notepad,save,copy,paste,enter,open_cmd,close_cmd,select_all,backspace,open_anything,turn_on_bluetooth,close,maximize,minimize
 from modules.entertainment import spotify
-from modules.web_utilities import monkey_type,whatsapp
+from modules.web_utilities import monkey_type,whatsapp,google,youtube
 from modules.chat_mode import chat_mode
 import time
 from modules.pushbullet_actions import lock_phone
-system_start()
+#system_start()
 speak("Jarvis 2.0 initialized.")
 #greet()
 
@@ -127,7 +127,18 @@ while True:
             elif "lock my phone" in command:
                 speak("Locking your phone, sir.")
                 lock_phone() 
-            
+            elif "turn on bluetooth" in command:
+                turn_on_bluetooth()
+            elif "close this window" in command:
+                close()
+            elif "maximize" in command:
+                maximize()
+            elif "minimise" in command:
+                minimize()
+            elif "search on google" in command:
+                google()
+            elif "play on youtube" in command:
+                youtube()
             else:
                 speak(f"You said: {command}")
                 

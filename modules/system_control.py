@@ -138,3 +138,17 @@ def open_anything(query):
      time.sleep(1)
      pyautogui.press('enter')
      speak(f'opening {item} sir')
+def turn_on_bluetooth(): #isnt efficient
+     pyautogui.press('win')
+     time.sleep(0.7)
+     pyautogui.write('bluetooth')
+     time.sleep(1)
+     pyautogui.press('enter')
+     pyautogui.moveTo(390, 220, duration=0.5)
+     pyautogui.click()
+def close():
+     pyautogui.hotkey('alt', 'f4')
+def maximize():
+     pyautogui.hotkey('win','up')
+def minimize():
+     pyautogui.hotkey('win','down')

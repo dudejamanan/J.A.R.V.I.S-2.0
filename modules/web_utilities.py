@@ -34,3 +34,13 @@ def whatsapp():
         speak("Sorry, i coundn't send the message")
         print(e)
 
+def google():
+    speak("what may i search on google sir?")
+    query=listen()
+    webbrowser.open(f"https://www.google.com/search?q={query}")
+
+def youtube():
+    speak("What may i play on youtube sir?")
+    query=listen()
+    speak(f"playing {query}")
+    pywhatkit.playonyt(f"{query}")
